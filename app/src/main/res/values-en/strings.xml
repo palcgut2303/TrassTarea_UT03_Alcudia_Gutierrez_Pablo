@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TrassTarea</string>
+    <string name="main_tv_slogan">Your tasks, your pace, your success.</string>
+    <string name="main_bt_empezar">Start</string>
+    <string name="main_iv_descripcion">Image with the app logo</string>
+    <string name="listado_tv_vacio">No tasks available</string>
+    <string name="listado_tv_no_prioritarias">No priority tasks available</string>
+    <string name="elemento_tv_titulo">Task Title</string>
+    <string name="elemento_tv_fecha">dd/mm/yyyy</string>
+    <string name="elemento_tv_quedan">Remaining:</string>
+    <string name="elemento_tv_ndias">00</string>
+    <string name="elemento_tv_dias">days</string>
+    <string name="item_acerca_de">About…</string>
+    <string name="item_salir">Exit</string>
+    <string name="item_crear_tarea">Create Task</string>
+    <string name="item_prioritarias">Priorities</string>
+    <string name="item_descripcion">Description</string>
+    <string name="item_editar">Edit</string>
+    <string name="item_borrar">Delete</string>
+    <string name="tv_crear_tarea">Create Task</string>
+    <string name="tv_editar_tarea">Edit Task</string>
+    <string name="tv_titulo">Title</string>
+    <string name="et_titulo">Task Title</string>
+    <string name="tv_fecha_creacion">Creation Date</string>
+    <string name="tv_fecha_objetivo">Target Date</string>
+    <string name="tv_progreso">Progress</string>
+    <string name="cb_prioritaria">Priority</string>
+    <string name="bt_siguiente">Next</string>
+    <string name="tv_descripcion">Description</string>
+    <string name="bt_guardar">Save</string>
+    <string name="bt_volver">Back</string>
+    <string name="hint_et_descripcion">Provide a detailed description of the task</string>
+    <string name="msg_salida">Goodbye</string>
+    <string name="tarea_add">Task added</string>
+    <string name="et_fecha">dd/mm/yyyy</string>
+    <string name="about_title">About…</string>
+    <string name="about_msg">Jose Luis Camuñas\n IES Trassierra\n© 2023</string>
+    <string name="about_ok">Accept</string>
+    <string name="dialog_confirmacion_titulo">Confirm Deletion</string>
+    <string name="dialog_yes">Yes</string>
+    <string name="dialog_no">No</string>
+    <string name="dialog_msg">Are you sure you want to delete the task:</string>
+    <string name="dialog_erased">Task deleted</string>
+    <string name="dialog_not_found">Task not found</string>
+    <string name="dialog_detalles">Task Details</string>
+    <string name="dialog_close">Close</string>
+    <string name="tarea_edit">Task edited</string>
+    <string name="action_canceled">Action canceled</string>
+    <string name="bt_cancelar">Cancel</string>
+    <string name="ad_campos_incompletos">Incomplete fields</string>
+    <string name="ad_campos_contenido">Please fill in the title and dates information</string>
+    <string name="bt_aceptar">Accept</string>
+    <string name="ad_fechas">Inconsistent dates</string>
+    <string name="ad_fechas_contenido">The target date cannot be earlier than the creation date</string>
+
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">VISUALIZACIÓN</string>
+    <string name="ordenacion_header">ORDENACIÓN</string>
+    <string name="almacenamiento_header">ALMACENAMIENTO</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="letra_title">Tamaño de la letra</string>
+    <string name="orden_title">Orden</string>
+
+    <string name="basedatos_title">Base de Datos</string>
+    <string name="criterio_title">Criterio</string>
+    <string name="almacenamiento_title">Almacenamiento en tarjeta SD</string>
+
+    <string name="limpieza_title">Dias de periodicidad</string>
+    <!-- Sync Preferences -->
+    <string name="attachment_title">Tema de la App</string>
+    <string name="attachment_summary_on">Claro</string>
+    <string name="attachment_summary_off">Oscuro</string>
+    <string name="attachment_orden_on">Ascendente</string>
+    <string name="attachment_orden_off">Descendente</string>
+
+    <string name="basedatosInte_orden_off">Interna</string>
+    <string name="basedatosExt_orden_on">Externa</string>
+</resources>

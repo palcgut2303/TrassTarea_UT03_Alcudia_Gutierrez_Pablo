@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvNombre"
+        android:layout_width="327dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:text="@string/nombre_tarea"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvDescripcion"
+        android:layout_width="333dp"
+        android:layout_height="277dp"
+        android:layout_marginTop="30dp"
+        android:text="TextView"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvNombre" />
+
+    <ImageButton
+        android:id="@+id/btDoc"
+        android:layout_width="71dp"
+        android:layout_height="56dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnIm"
+        app:layout_constraintEnd_toStartOf="@+id/btnAud"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnIm"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/baseline_insert_drive_file_24" />
+
+    <ImageButton
+        android:id="@+id/btnIm"
+        android:layout_width="71sp"
+        android:layout_height="56sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnAud"
+        app:layout_constraintEnd_toStartOf="@+id/btnVid"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnAud"
+        app:layout_constraintTop_toTopOf="@+id/btnAud"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/baseline_image_24" />
+
+    <ImageButton
+        android:id="@+id/btnAud"
+        android:layout_width="71sp"
+        android:layout_height="56sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnVid"
+        app:layout_constraintEnd_toStartOf="@+id/btnIm"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btDoc"
+        app:layout_constraintTop_toTopOf="@+id/btnVid"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/baseline_audio_file_24" />
+
+    <ImageButton
+        android:id="@+id/btnVid"
+        android:layout_width="71sp"
+        android:layout_height="56sp"
+        android:layout_marginTop="148dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnIm"
+        app:layout_constraintTop_toBottomOf="@+id/tvDescripcion"
+        app:srcCompat="@drawable/baseline_add_to_queue_24" />
+
+    <Button
+        android:id="@+id/btnCerrar2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cerrar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnAud" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="171dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/fechaObjet"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btDoc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDescripcion"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/txtFecha"
+        android:layout_width="144dp"
+        android:layout_height="41dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btnIm"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.447"
+        app:layout_constraintStart_toEndOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/tvDescripcion"
+        app:layout_constraintVertical_bias="0.411" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="171dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="20dp"
+        android:text="@string/progreso"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btDoc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        app:layout_constraintVertical_bias="0.428" />
+
+    <TextView
+        android:id="@+id/tvProgreso"
+        android:layout_width="144dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btnVid"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.447"
+        app:layout_constraintStart_toEndOf="@+id/textView7"
+        app:layout_constraintTop_toBottomOf="@+id/txtFecha"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primario">#105F8D</color>
+    <color name="primario_oscuro">#20333D</color>
+    <color name="resaltado">#219BCC</color>
+    <color name="resaltado_oscuro">#004C69</color>
+    <color name="oscuro">#FF101010</color>
+    <color name="claro">#FFf4f4f4</color>
+    <color name="rojo">#FFf01010</color>
+    <color name="secundario">#DCE3E9</color>
+</resources>

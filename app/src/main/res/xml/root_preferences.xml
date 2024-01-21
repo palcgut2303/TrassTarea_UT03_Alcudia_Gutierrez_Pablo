@@ -1,0 +1,108 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="@string/messages_header">
+
+        <SwitchPreferenceCompat
+            app:defaultValue="true"
+            app:key="tema"
+            app:summaryOff="@string/attachment_summary_off"
+            app:summaryOn="@string/attachment_summary_on"
+            app:title="@string/attachment_title" />
+
+        <ListPreference
+            app:defaultValue="2"
+            app:entries="@array/letra_entries"
+            app:entryValues="@array/letra_values"
+            app:icon="@drawable/baseline_format_size_24"
+            app:key="tamañoLetra"
+            app:title="@string/letra_title"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/ordenacion_header">
+
+        <ListPreference
+            app:defaultValue="2"
+            app:entries="@array/orden_entries"
+            app:entryValues="@array/orden_values"
+            app:icon="@drawable/baseline_reorder_24"
+            app:key="criterio"
+            app:title="@string/criterio_title"
+            app:useSimpleSummaryProvider="true" />
+
+        <SwitchPreferenceCompat
+            app:defaultValue="true"
+            app:key="orden"
+            app:summaryOff="@string/attachment_orden_off"
+            app:summaryOn="@string/attachment_orden_on"
+            app:title="@string/orden_title" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/almacenamiento_header">
+
+        <CheckBoxPreference
+            app:defaultValue="false"
+            app:icon="@drawable/baseline_save_24"
+            app:key="sd"
+            app:title="@string/almacenamiento_title" />
+
+        <EditTextPreference
+            android:inputType="number"
+            app:defaultValue="0"
+            app:key="limpieza"
+            app:title="Periodicidad de limpieza (días)" />
+
+        <SwitchPreferenceCompat
+            app:defaultValue="false"
+            app:icon="@drawable/baseline_storage_24"
+            app:key="bd"
+            app:summaryOff="@string/basedatosInte_orden_off"
+            app:summaryOn="@string/basedatosExt_orden_on"
+            app:title="@string/basedatos_title" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:dependency="bd"
+        app:key="external_db"
+        app:title="Base de Datos Externa">
+
+        <EditTextPreference
+            app:defaultValue="bd"
+            app:key="nombrebd"
+            app:title="Nombre de la Base de Datos" />
+
+        <EditTextPreference
+            app:defaultValue="10.0.2.2"
+            app:key="ip"
+            app:title="IP del Servidor" />
+
+        <EditTextPreference
+            app:defaultValue="1001"
+            app:key="puerto"
+            app:title="Puerto" />
+
+        <EditTextPreference
+            app:defaultValue="usuario"
+            app:key="usuario"
+            app:title="Usuario" />
+
+        <EditTextPreference
+            app:defaultValue=""
+            app:key="password"
+            app:title="Contraseña" />
+
+
+    </PreferenceCategory>
+
+    <PreferenceCategory>
+            <Preference
+                    android:key="resetBoton"
+                    android:layout="@layout/reset_buttom_layout"
+                />
+    </PreferenceCategory>
+
+
+</PreferenceScreen>

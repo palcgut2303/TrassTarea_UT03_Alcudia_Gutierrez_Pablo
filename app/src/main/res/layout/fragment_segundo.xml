@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragmentos.FragmentoDos">
+
+    <ImageButton
+        android:id="@+id/btAudio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/baseline_audio_file_24"
+        app:layout_constraintBottom_toTopOf="@+id/btVideo"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btImagen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/baseline_image_24"
+        app:layout_constraintBottom_toTopOf="@+id/btAudio"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btVideo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="68dp"
+        android:src="@drawable/baseline_add_to_queue_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/urlDocument"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/urlDocu"
+        app:layout_constraintBottom_toBottomOf="@+id/btDocumento"
+        app:layout_constraintStart_toEndOf="@+id/btDocumento"
+        app:layout_constraintTop_toTopOf="@+id/btDocumento" />
+
+    <TextView
+        android:id="@+id/urlImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/urlIMG"
+        app:layout_constraintBottom_toBottomOf="@+id/btImagen"
+        app:layout_constraintStart_toEndOf="@+id/btImagen"
+        app:layout_constraintTop_toTopOf="@+id/btImagen"
+        app:layout_constraintVertical_bias="0.468" />
+
+    <TextView
+        android:id="@+id/urlAudio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/urlAudio"
+        app:layout_constraintBottom_toBottomOf="@+id/btAudio"
+        app:layout_constraintStart_toEndOf="@+id/btAudio"
+        app:layout_constraintTop_toTopOf="@+id/btAudio"
+        app:layout_constraintVertical_bias="0.468" />
+
+    <ImageButton
+        android:id="@+id/btDocumento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/baseline_insert_drive_file_24"
+        app:layout_constraintBottom_toTopOf="@+id/btImagen"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="380dp"
+        android:layout_height="281dp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="88dp">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_descripcion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="@string/hint_et_descripcion"
+            android:inputType="textMultiLine"
+            android:lines="15" />
+    </ScrollView>
+
+    <Button
+        android:id="@+id/bt_volver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="@string/bt_volver"
+        app:layout_constraintEnd_toEndOf="@+id/bt_guardar"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/bt_guardar"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+
+    <Button
+        android:id="@+id/bt_guardar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="100dp"
+        android:text="@string/bt_guardar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/urlVideo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/urlVideo"
+        app:layout_constraintBottom_toBottomOf="@+id/btVideo"
+        app:layout_constraintStart_toEndOf="@+id/btVideo"
+        app:layout_constraintTop_toTopOf="@+id/btVideo" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

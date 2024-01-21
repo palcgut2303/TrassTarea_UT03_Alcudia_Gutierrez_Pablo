@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="progreso_texto">
+        <item>Not started</item>
+        <item>Started</item>
+        <item>Advanced</item>
+        <item>Almost finished</item>
+        <item>Finished</item>
+    </array>
+</resources>

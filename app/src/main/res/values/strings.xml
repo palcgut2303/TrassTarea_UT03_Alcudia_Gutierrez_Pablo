@@ -1,0 +1,103 @@
+<resources>
+    <string name="app_name">TrassTarea</string>
+    <string name="main_tv_slogan">Tus tareas, tu ritmo, tu éxito.</string>
+    <string name="main_bt_empezar">Empezar</string>
+    <string name="main_iv_descripcion">Imagen con el logotipo de la app</string>
+    <string name="listado_tv_vacio">No hay tareas disponibles</string>
+    <string name="listado_tv_no_prioritarias">No hay tareas prioritarias disponibles</string>
+    <string name="elemento_tv_titulo">Título de la Tarea</string>
+    <string name="elemento_tv_fecha">dd/mm/aaaa</string>
+    <string name="elemento_tv_quedan">Quedan:</string>
+    <string name="elemento_tv_ndias">00</string>
+    <string name="elemento_tv_dias">días</string>
+    <string name="item_acerca_de">Acerca de…</string>
+    <string name="item_salir">Salir</string>
+    <string name="item_crear_tarea">Crear Tarea</string>
+    <string name="item_prioritarias">Prioritarias</string>
+    <string name="item_descripcion">Descripción</string>
+    <string name="item_editar">Editar</string>
+    <string name="item_borrar">Borrar</string>
+    <string name="tv_crear_tarea">Crear tarea</string>
+    <string name="tv_editar_tarea">Editar tarea</string>
+    <string name="tv_titulo">Título</string>
+    <string name="et_titulo">Título de la tarea</string>
+    <string name="tv_fecha_creacion">Fecha creación</string>
+    <string name="tv_fecha_objetivo">Fecha objetivo</string>
+    <string name="tv_progreso">Progreso</string>
+    <string name="cb_prioritaria">Prioritaria</string>
+    <string name="bt_siguiente">Siguiente</string>
+    <string name="tv_descripcion">Descripción</string>
+    <string name="bt_guardar">Guardar</string>
+    <string name="bt_volver">Volver</string>
+    <string name="hint_et_descripcion">Descripción de la tarea...</string>
+    <string name="msg_salida">Hasta pronto</string>
+    <string name="tarea_add">Tarea añadida</string>
+    <string name="et_fecha">dd/mm/aaaa</string>
+    <string name="about_title">Acerca de…</string>
+    <string name="about_msg">Pablo Alcudia Gutiérrez\n IES Trassierra\n\u00A9 2023</string>
+    <string name="about_ok">Aceptar</string>
+    <string name="dialog_confirmacion_titulo">Confirmar borrado</string>
+    <string name="dialog_yes">Sí</string>
+    <string name="dialog_no">No</string>
+    <string name="dialog_msg">¿Confirmas que quieres borrar la tarea:</string>
+    <string name="dialog_erased">Tarea borrada</string>
+    <string name="dialog_not_found">Tarea no encontrada</string>
+    <string name="dialog_detalles">Detalles de: </string>
+    <string name="dialog_close">Cerrar</string>
+    <string name="tarea_edit">Tarea editada</string>
+    <string name="action_canceled">Acción cancelada</string>
+    <string name="bt_cancelar">Cancelar</string>
+    <string name="ad_campos_incompletos">Campos incompletos</string>
+    <string name="ad_campos_contenido">Complete la información de título y fechas</string>
+    <string name="bt_aceptar">Aceptar</string>
+    <string name="ad_fechas">Fechas inconsistentes</string>
+    <string name="ad_fechas_contenido">La fecha objetivo no puede ser anterior a la fecha de creación</string>
+    <string name="preferencias" translatable="false">Preferencias</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">VISUALIZACIÓN</string>
+    <string name="ordenacion_header">ORDENACIÓN</string>
+    <string name="almacenamiento_header">ALMACENAMIENTO</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="letra_title">Tamaño de la letra</string>
+    <string name="orden_title">Orden</string>
+
+    <string name="basedatos_title">Base de Datos</string>
+    <string name="criterio_title">Criterio</string>
+    <string name="almacenamiento_title">Almacenamiento en tarjeta SD</string>
+
+    <string name="limpieza_title">Dias de periodicidad</string>
+    <!-- Sync Preferences -->
+    <string name="attachment_title">Tema de la App</string>
+    <string name="attachment_summary_on">Claro</string>
+    <string name="attachment_summary_off">Oscuro</string>
+    <string name="attachment_orden_on">Ascendente</string>
+    <string name="attachment_orden_off">Descendente</string>
+
+    <string name="basedatosInte_orden_off">Interna</string>
+    <string name="basedatosExt_orden_on">Externa</string>
+    <string name="documento">Documento</string>
+    <string name="imagen">Imagen</string>
+    <string name="audio">Audio</string>
+    <string name="video">Video</string>
+    <string name="urlDocu">SIN URL</string>
+    <string name="urlIMG">SIN URL</string>
+    <string name="urlAudio">SIN URL</string>
+    <string name="urlVideo">SIN URL</string>
+    <string name="detalles">Detalles</string>
+    <string name="nombre_tarea">Nombre de la Tarea</string>
+    <string name="cerrar">Cerrar</string>
+    <string name="estadisticas">ESTADÍSTICAS</string>
+    <string name="nTareas">Número de Tareas:</string>
+    <string name="promedio">Promedio Progreso:</string>
+    <string name="promedioFech">Promedio Fecha Creacion</string>
+    <string name="posterior">Posterior a Fecha Objetivo:</string>
+    <string name="cadenaConsulta">Buscar Tarea Por Nombre:</string>
+    <string name="buscar">Buscar</string>
+    <string name="fechaObjet">"Fecha Objetivo: "</string>
+    <string name="progreso">Progreso:</string>
+    <string name="restablecer_preferencias">Restablecer Preferencias</string>
+</resources>
