@@ -2,6 +2,7 @@ package iestrassierra.jlcamunas.trasstarea.actividades;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.preference.PreferenceManager;
 
 import android.content.Intent;
@@ -12,6 +13,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.util.DisplayMetrics;
 import android.view.View;
+import android.view.ViewTreeObserver;
 import android.widget.Button;
 
 import java.io.File;
@@ -40,9 +42,13 @@ public class MainActivity extends AppCompatActivity {
         borrarArchivosInterno();
         if(tarjetaSDMontada()){
             borrarArchivosSD(rutaSD);
+
         }
 
+
+
     }
+
 
     @Override
     protected void onResume() {
