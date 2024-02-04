@@ -14,7 +14,11 @@ import android.os.Environment;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.ViewTreeObserver;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.io.File;
 import java.util.Calendar;
@@ -29,6 +33,10 @@ public class MainActivity extends AppCompatActivity {
     //Ruta donde tenemos los archivos SD
     private final String rutaSD = "/storage/emulated/0/Android/data/iestrassierra.jlcamunas.trasstarea/files";
     private SharedPreferences sharedPreferences;
+
+    private TextView textSlogan ;
+
+    private ImageView imgLogo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
         theme = sharedPreferences.getBoolean("tema",true);
         Button btEmpezar = findViewById(R.id.main_bt_empezar);
         btEmpezar.setOnClickListener(this::empezar);
+        textSlogan = findViewById(R.id.main_tv_eslogan);
+        imgLogo = findViewById(R.id.main_iv_logo);
         //getTheme();
         establecerFuente();
         borrarArchivosInterno();
@@ -44,8 +54,10 @@ public class MainActivity extends AppCompatActivity {
             borrarArchivosSD(rutaSD);
 
         }
-
-
+        Animation animation = AnimationUtils.loadAnimation(this, R.anim.wow_animation);
+        Animation animation2 = AnimationUtils.loadAnimation(this, R.anim.slide_animation);
+        textSlogan.startAnimation(animation);
+        imgLogo.startAnimation(animation2);
 
     }
 

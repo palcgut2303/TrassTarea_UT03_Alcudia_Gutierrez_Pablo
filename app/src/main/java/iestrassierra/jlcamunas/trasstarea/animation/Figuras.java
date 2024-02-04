@@ -9,13 +9,11 @@ import android.graphics.Point;
 import android.util.AttributeSet;
 import android.view.View;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
-public class Animation extends View {
-    private CircleThread[] circleThreads;
-    private TriangleThread[] triangleThreads;
+public class Figuras extends View {
+    private CirculoHilo[] circleThreads;
+    private TrianguloHilo[] triangleThreads;
     private CuadradoHilo[] cuadradoHilos;
     private EstrellaHilo[] estrellaHilos;
     private int width;
@@ -27,20 +25,20 @@ public class Animation extends View {
         width = w;
         height = h;
 
-        circleThreads = new CircleThread[3];
-        triangleThreads = new TriangleThread[3];
+        circleThreads = new CirculoHilo[3];
+        triangleThreads = new TrianguloHilo[3];
         cuadradoHilos = new CuadradoHilo[3];
         estrellaHilos = new EstrellaHilo[3];
 
 
         for (int i = 0; i < circleThreads.length; i++) {
-            circleThreads[i] = new CircleThread(width,height);
+            circleThreads[i] = new CirculoHilo(width,height);
             circleThreads[i].start();
         }
 
 
         for (int i = 0; i < triangleThreads.length; i++) {
-            triangleThreads[i] = new TriangleThread(width,height);
+            triangleThreads[i] = new TrianguloHilo(width,height);
             triangleThreads[i].start();
         }
 
@@ -57,12 +55,12 @@ public class Animation extends View {
         }
     }
 
-    public Animation(Context context) {
+    public Figuras(Context context) {
         super(context);
 
     }
 
-    public Animation(Context context, AttributeSet attrs) {
+    public Figuras(Context context, AttributeSet attrs) {
         super(context, attrs);
 
     }
@@ -76,15 +74,15 @@ public class Animation extends View {
 
         Paint circlePaint = new Paint();
         circlePaint.setColor(Color.RED);
-        for (CircleThread circleThread : circleThreads) {
+        for (CirculoHilo circleThread : circleThreads) {
             canvas.drawCircle(circleThread.getX(), circleThread.getY(), circleThread.getRadius(), circlePaint);
         }
 
 
         Paint trianglePaint = new Paint();
         trianglePaint.setColor(Color.BLUE);
-        for (TriangleThread triangleThread : triangleThreads) {
-            canvas.drawPath(triangleThread.getTrianglePath(), trianglePaint);
+        for (TrianguloHilo triangleThread : triangleThreads) {
+            canvas.drawPath(triangleThread.crearTriangulo(), trianglePaint);
         }
 
 
@@ -102,14 +100,14 @@ public class Animation extends View {
         }
     }
 
-    private class CircleThread extends Thread {
+    private class CirculoHilo extends Thread {
         private static final int RADIUS = 50;
         private static final int MOVE_SPEED = 5;
 
         private float x, y;
         private int dx, dy;
 
-        public CircleThread(int width,int height) {
+        public CirculoHilo(int width, int height) {
             Random random = new Random();
             x = random.nextInt(width - 2 * RADIUS) + RADIUS;
             y = random.nextInt(height - 2 * RADIUS) + RADIUS;
@@ -120,7 +118,7 @@ public class Animation extends View {
         @Override
         public void run() {
             while (true) {
-                updatePosition();
+                actualizarPosicion();
                 postInvalidate();
                 try {
                     Thread.sleep(16);
@@ -130,7 +128,7 @@ public class Animation extends View {
             }
         }
 
-        public void updatePosition() {
+        public void actualizarPosicion() {
 
             x += dx;
             y += dy;
@@ -159,7 +157,7 @@ public class Animation extends View {
 
     }
 
-    private class TriangleThread extends Thread {
+    private class TrianguloHilo extends Thread {
         private static final int TRIANGLE_SIZE = 60;
         private static final int MOVE_SPEED = 5;
 
@@ -167,7 +165,7 @@ public class Animation extends View {
         private int width, height; // Ancho y alto de la vista
         private int dx, dy; // Dirección del movimiento del triángulo
 
-        public TriangleThread(int widthC,int heightC) {
+        public TrianguloHilo(int widthC, int heightC) {
             Random random = new Random();
             width = widthC;
             height = heightC;
@@ -180,7 +178,7 @@ public class Animation extends View {
         @Override
         public void run() {
             while (true) {
-                updatePosition();
+                actualizarPosicion();
                 postInvalidate(); // Redibujar la vista
                 try {
                     Thread.sleep(16);
@@ -190,7 +188,7 @@ public class Animation extends View {
             }
         }
 
-        public void updatePosition() {
+        public void actualizarPosicion() {
 
             x += dx;
             y += dy;
@@ -203,7 +201,7 @@ public class Animation extends View {
             }
         }
 
-        public Path getTrianglePath() {
+        public Path crearTriangulo() {
             Path path = new Path();
             path.moveTo(x, y); // Punto superior
             path.lineTo(x + TRIANGLE_SIZE, y + TRIANGLE_SIZE); // Punto inferior derecho
@@ -234,7 +232,7 @@ public class Animation extends View {
         @Override
         public void run() {
             while (true) {
-                updatePosition();
+                actualizarPosicion();
                 postInvalidate();
                 try {
                     Thread.sleep(16);
@@ -244,7 +242,7 @@ public class Animation extends View {
             }
         }
 
-        public void updatePosition() {
+        public void actualizarPosicion() {
             x += dx;
             y += dy;
             if (x <= 0 || x >= maxWidth - size) {
@@ -287,7 +285,7 @@ public class Animation extends View {
         @Override
         public void run() {
             while (true) {
-                updatePosition();
+                actualizarPosicion();
                 try {
                     Thread.sleep(16);
                 } catch (InterruptedException e) {
@@ -296,7 +294,7 @@ public class Animation extends View {
             }
         }
 
-        public void updatePosition() {
+        public void actualizarPosicion() {
             x += dxStar;
             y += dyStar;
             if (x <= 0 || x >= maxWidth - size) {
@@ -306,25 +304,6 @@ public class Animation extends View {
                 dyStar = -dyStar;
             }
         }
-
-        public int getX() {
-            return x;
-        }
-
-        public int getY() {
-            return y;
-        }
-
-        public float getSize() {
-            return size;
-        }
-
-        // Método llamado cuando cambia el tamaño de la vista
-        public void setMaxSize(int width, int height) {
-            maxWidth = width;
-            maxHeight = height;
-        }
-
         public Path creaEstrella (int radio){
             Point centro = new Point(x, y);
 

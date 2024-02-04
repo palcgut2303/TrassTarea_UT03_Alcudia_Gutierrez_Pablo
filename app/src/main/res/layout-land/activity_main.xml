@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".actividades.MainActivity">
 
-    <iestrassierra.jlcamunas.trasstarea.animation.Animation
+    <iestrassierra.jlcamunas.trasstarea.animation.Figuras
         android:id="@+id/fondoAnimadoView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

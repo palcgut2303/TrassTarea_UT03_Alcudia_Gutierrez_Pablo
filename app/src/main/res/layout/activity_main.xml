@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".actividades.MainActivity">
 
-    <iestrassierra.jlcamunas.trasstarea.animation.Animation
+    <iestrassierra.jlcamunas.trasstarea.animation.Figuras
         android:id="@+id/fondoAnimadoView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -24,6 +24,7 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/main_iv_logo" />
 
@@ -38,6 +39,7 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/main_iv_logo"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.658"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -48,6 +50,7 @@
         android:contentDescription="@string/main_iv_descripcion"
         app:layout_constraintBottom_toTopOf="@+id/main_bt_empezar"
         app:layout_constraintEnd_toEndOf="@+id/main_tv_eslogan"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/main_tv_eslogan"
         app:layout_constraintTop_toBottomOf="@+id/main_tv_eslogan"
         app:srcCompat="@drawable/icon_pablo" />
