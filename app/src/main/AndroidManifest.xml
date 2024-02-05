@@ -19,6 +19,9 @@
             android:exported="false"
             android:label="@string/title_activity_settings" />
         <activity
+            android:name=".actividades.AudioActividad"
+            android:exported="false"/>
+        <activity
         android:name=".actividades.EstadisticasActivity"
         android:exported="false" />
         <activity

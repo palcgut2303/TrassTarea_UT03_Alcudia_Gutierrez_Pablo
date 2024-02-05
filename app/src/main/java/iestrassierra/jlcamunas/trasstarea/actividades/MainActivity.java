@@ -2,7 +2,6 @@ package iestrassierra.jlcamunas.trasstarea.actividades;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.preference.PreferenceManager;
 
 import android.content.Intent;
@@ -13,7 +12,6 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.util.DisplayMetrics;
 import android.view.View;
-import android.view.ViewTreeObserver;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
@@ -54,8 +52,8 @@ public class MainActivity extends AppCompatActivity {
             borrarArchivosSD(rutaSD);
 
         }
-        Animation animation = AnimationUtils.loadAnimation(this, R.anim.wow_animation);
-        Animation animation2 = AnimationUtils.loadAnimation(this, R.anim.slide_animation);
+        Animation animation = AnimationUtils.loadAnimation(this, R.anim.slide_in_up);
+        Animation animation2 = AnimationUtils.loadAnimation(this, R.anim.fade_in);
         textSlogan.startAnimation(animation);
         imgLogo.startAnimation(animation2);
 

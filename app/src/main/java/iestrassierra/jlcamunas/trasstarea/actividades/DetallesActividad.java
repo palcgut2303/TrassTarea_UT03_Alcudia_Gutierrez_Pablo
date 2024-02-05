@@ -1,5 +1,7 @@
 package iestrassierra.jlcamunas.trasstarea.actividades;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,10 +9,17 @@ import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContract;
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.Objects;
 
 import iestrassierra.jlcamunas.trasstarea.R;
 import iestrassierra.jlcamunas.trasstarea.modelo.Tarea;
@@ -73,7 +82,7 @@ public class DetallesActividad extends AppCompatActivity {
         });
         btnAud.setOnClickListener(v ->{
 
-            mostrarURL("AUDIO",tareaDetallada.getURL_aud());
+            mostrarContenidoAudio();
 
 
         });
@@ -112,4 +121,45 @@ public class DetallesActividad extends AppCompatActivity {
         builder.show();
     }
 
+    public void mostrarContenidoAudio(){
+        lanzadorActividadDetalles.launch(tareaDetallada);
+    }
+
+    ActivityResultContract<Tarea, Tarea> contratoDetalle = new ActivityResultContract<Tarea, Tarea>() {
+        @NonNull
+        @Override
+        public Intent createIntent(@NonNull Context context, Tarea tarea) {
+            Intent intent = new Intent(context, AudioActividad.class);
+            Bundle bundle = new Bundle();
+            bundle.putParcelable("TareaDetallada", tarea);
+            intent.putExtras(bundle);
+            return intent;
+        }
+
+        @Override
+        public Tarea parseResult(int i, @Nullable Intent intent) {
+            if (i == Activity.RESULT_OK && intent != null) {
+                try {
+                    return (Tarea) Objects.requireNonNull(intent.getExtras()).get("TareaDetallada");
+                } catch (NullPointerException e) {
+                    Log.e("Error en intent devuelto", Objects.requireNonNull(e.getLocalizedMessage()));
+                }
+            }else if(i == Activity.RESULT_CANCELED){
+                Toast.makeText(getApplicationContext(),"Volviendo de los detalles", Toast.LENGTH_SHORT).show();
+            }
+            return null; // Devuelve null si no se pudo obtener una Tarea válida.
+        }
+    };
+
+    //Respuesta para el lanzador hacia la actividad EditarTareaActivity
+    ActivityResultCallback<Tarea> resultadoDetallada = new ActivityResultCallback<Tarea>() {
+        @Override
+        public void onActivityResult(Tarea tareaDetallada) {
+            if (tareaDetallada != null) {
+                Toast.makeText(getApplicationContext(),"Volviendo de los detalles", Toast.LENGTH_SHORT).show();
+            }
+        }
+    };
+
+    ActivityResultLauncher<Tarea> lanzadorActividadDetalles = registerForActivityResult(contratoDetalle, resultadoDetallada);
 }

@@ -8,6 +8,8 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -60,6 +62,8 @@ public class TareaAdapter extends RecyclerView.Adapter<TareaAdapter.TaskViewHold
         Tarea tarea = tasks.get(position);
         taskViewHolder.bind(tarea);
         taskViewHolder.itemView.setTag(tarea); //Adjuntamos la tarea en la vista del ViewHolder
+        Animation animation2 = AnimationUtils.loadAnimation(taskViewHolder.itemView.getContext(), R.anim.slide);
+        taskViewHolder.itemView.startAnimation(animation2);
     }
 
     @Override
@@ -100,6 +104,7 @@ public class TareaAdapter extends RecyclerView.Adapter<TareaAdapter.TaskViewHold
         //Método que nos permitirá configurar cada elemento del Recycler con las informaciones
         //de la tarea
         private void bind(Tarea t) {
+
             tvTitulo.setText(t.getTitulo());
             pgProgreso.setProgress(t.getProgreso());
             tvFechaCreacion.setText(t.getCreacionFecha());

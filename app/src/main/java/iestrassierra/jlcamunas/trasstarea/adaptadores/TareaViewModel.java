@@ -11,6 +11,7 @@ import static iestrassierra.jlcamunas.trasstarea.modelo.Tarea.comparadorProgreso
 
 import android.app.Application;
 import android.content.SharedPreferences;
+import android.net.Uri;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
@@ -37,10 +38,10 @@ public class TareaViewModel extends AndroidViewModel {
     private final MutableLiveData<Integer> progreso = new MutableLiveData<>();
     private final MutableLiveData<Boolean> prioritaria = new MutableLiveData<>();
     private final MutableLiveData<String> descripcion = new MutableLiveData<>();
-    private final MutableLiveData<String> URL_doc = new MutableLiveData<>();
-    private final MutableLiveData<String> URL_img = new MutableLiveData<>();
-    private final MutableLiveData<String> URL_vid = new MutableLiveData<>();
-    private final MutableLiveData<String> URL_aud = new MutableLiveData<>();
+    private final MutableLiveData<Uri> URL_doc = new MutableLiveData<>();
+    private final MutableLiveData<Uri> URL_img = new MutableLiveData<>();
+    private final MutableLiveData<Uri> URL_vid = new MutableLiveData<>();
+    private final MutableLiveData<Uri> URL_aud = new MutableLiveData<>();
 
     public MutableLiveData<String> getTitulo() {
         return titulo;
@@ -50,35 +51,35 @@ public class TareaViewModel extends AndroidViewModel {
         this.titulo.setValue(titulo);
     }
 
-    public MutableLiveData<String> getURL_doc() {
+    public MutableLiveData<Uri> getURL_doc() {
         return URL_doc;
     }
 
-    public void setURL_doc(String urlDoc) {
+    public void setURL_doc(Uri urlDoc) {
         this.URL_doc.setValue(urlDoc);
     }
 
-    public MutableLiveData<String> getURL_img() {
+    public MutableLiveData<Uri> getURL_img() {
         return URL_img;
     }
 
-    public void setURL_img(String urlImg) {
+    public void setURL_img(Uri urlImg) {
         this.URL_img.setValue(urlImg);
     }
 
-    public MutableLiveData<String> getURL_vid() {
+    public MutableLiveData<Uri> getURL_vid() {
         return URL_vid;
     }
 
-    public void setURL_vid(String urlVid) {
+    public void setURL_vid(Uri urlVid) {
         this.URL_vid.setValue(urlVid);
     }
 
-    public MutableLiveData<String> getURL_aud() {
+    public MutableLiveData<Uri> getURL_aud() {
         return URL_aud;
     }
 
-    public void setURL_aud(String urlAud) {
+    public void setURL_aud(Uri urlAud) {
         this.URL_aud.setValue(urlAud);
     }
 

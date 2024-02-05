@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="27dp"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tbMusic"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar" />
+
+    <ImageButton
+        android:id="@+id/ibReproducir"
+        android:layout_width="49dp"
+        android:layout_height="48dp"
+        android:onClick="onClick"
+        app:layout_constraintBottom_toBottomOf="@id/tbMusic"
+        app:layout_constraintEnd_toStartOf="@+id/ibPausar"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar"
+        app:srcCompat="@drawable/baseline_play_circle_filled_24" />
+
+    <ImageButton
+        android:id="@+id/ibPausar"
+        android:layout_width="49dp"
+        android:layout_height="48dp"
+        android:onClick="onClick"
+        app:layout_constraintBottom_toBottomOf="@id/tbMusic"
+        app:layout_constraintEnd_toStartOf="@+id/ibStop"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ibReproducir"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar"
+        app:srcCompat="@drawable/baseline_pause_circle_filled_24" />
+
+    <ImageButton
+        android:id="@+id/ibStop"
+        android:layout_width="50dp"
+        android:layout_height="48dp"
+        android:onClick="onClick"
+        app:layout_constraintBottom_toBottomOf="@id/tbMusic"
+        app:layout_constraintEnd_toEndOf="@+id/tbMusic"
+        app:layout_constraintStart_toEndOf="@+id/ibPausar"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar"
+        app:srcCompat="@drawable/baseline_crop_square_24" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

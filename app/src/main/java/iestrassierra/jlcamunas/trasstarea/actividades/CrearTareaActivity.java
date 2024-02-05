@@ -112,10 +112,10 @@ public class CrearTareaActivity extends AppCompatActivity implements
     public void onBotonGuardarClicked() {
         //Leemos los valores del formulario del fragmento 2
         descripcion = tareaViewModel.getDescripcion().getValue();
-        URL_doc = tareaViewModel.getURL_doc().getValue();
-        URL_aud = tareaViewModel.getURL_aud().getValue();
-        URL_img = tareaViewModel.getURL_img().getValue();
-        URL_vid = tareaViewModel.getURL_vid().getValue();
+        URL_doc = tareaViewModel.getURL_doc().getValue().toString();
+        URL_aud = tareaViewModel.getURL_aud().getValue().toString();
+        URL_img = tareaViewModel.getURL_img().getValue().toString();
+        URL_vid = tareaViewModel.getURL_vid().getValue().toString();
         //Creamos la nueva tarea
         Tarea nuevaTarea = new Tarea(titulo, fechaCreacion,fechaObjetivo, progreso, prioritaria, descripcion,URL_doc,URL_aud,URL_img,URL_vid);
         //Creamos un intent de vuelta para la actividad Listado
@@ -284,10 +284,10 @@ public class CrearTareaActivity extends AppCompatActivity implements
     public void onBotonVolverClicked() {
         //Leemos los valores del formulario del fragmento 2
         descripcion = tareaViewModel.getDescripcion().getValue();
-        URL_aud = tareaViewModel.getURL_aud().getValue();
-        URL_vid = tareaViewModel.getURL_vid().getValue();
-        URL_img = tareaViewModel.getURL_img().getValue();
-        URL_doc = tareaViewModel.getURL_doc().getValue();
+        URL_aud = tareaViewModel.getURL_aud().getValue().toString();
+        URL_vid = tareaViewModel.getURL_vid().getValue().toString();
+        URL_img = tareaViewModel.getURL_img().getValue().toString();
+        URL_doc = tareaViewModel.getURL_doc().getValue().toString();
         //Cambiamos el fragmento2 por el 1
         cambiarFragmento(fragmento1);
     }

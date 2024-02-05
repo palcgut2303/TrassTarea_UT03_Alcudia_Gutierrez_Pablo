@@ -18,6 +18,7 @@ public class Figuras extends View {
     private EstrellaHilo[] estrellaHilos;
     private int width;
     private int height;
+    private static final int numFiguras = 3;
 
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
@@ -25,10 +26,10 @@ public class Figuras extends View {
         width = w;
         height = h;
 
-        circleThreads = new CirculoHilo[3];
-        triangleThreads = new TrianguloHilo[3];
-        cuadradoHilos = new CuadradoHilo[3];
-        estrellaHilos = new EstrellaHilo[3];
+        circleThreads = new CirculoHilo[numFiguras];
+        triangleThreads = new TrianguloHilo[numFiguras];
+        cuadradoHilos = new CuadradoHilo[numFiguras];
+        estrellaHilos = new EstrellaHilo[numFiguras];
 
 
         for (int i = 0; i < circleThreads.length; i++) {

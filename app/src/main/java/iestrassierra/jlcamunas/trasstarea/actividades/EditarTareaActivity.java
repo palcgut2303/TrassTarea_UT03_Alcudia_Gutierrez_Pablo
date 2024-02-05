@@ -10,6 +10,7 @@ import androidx.preference.PreferenceManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
@@ -37,10 +38,10 @@ public class EditarTareaActivity extends AppCompatActivity implements
     private String titulo, descripcion;
     private String fechaCreacion, fechaObjetivo;
     private Integer progreso;
-    private String URL_doc;
-    private String URL_img;
-    private String URL_aud;
-    private String URL_vid;
+    private Uri URL_doc;
+    private Uri URL_img;
+    private Uri URL_aud;
+    private Uri URL_vid;
     private Boolean prioritaria;
     private FragmentManager fragmentManager;
     private final Fragment fragmento1 = new FragmentoUno();
@@ -90,11 +91,14 @@ public class EditarTareaActivity extends AppCompatActivity implements
             tareaViewModel.setPrioritaria(tareaEditable.isPrioritaria());
             String descripcion = tareaEditable.getDescripcion();
             tareaViewModel.setDescripcion(descripcion);
-            tareaViewModel.setURL_doc(tareaEditable.getURL_doc());
-            tareaViewModel.setURL_aud(tareaEditable.getURL_aud());
-            tareaViewModel.setURL_vid(tareaEditable.getURL_vid());
-            String URLIm = tareaEditable.getURL_img();
-            tareaViewModel.setURL_img(URLIm);
+            Uri miUri = Uri.parse(tareaEditable.getURL_doc());
+            tareaViewModel.setURL_doc(miUri);
+            miUri = Uri.parse(tareaEditable.getURL_aud());
+            tareaViewModel.setURL_aud(miUri);
+            miUri = Uri.parse(tareaEditable.getURL_vid());
+            tareaViewModel.setURL_vid(miUri);
+             miUri = Uri.parse(tareaEditable.getURL_img());
+            tareaViewModel.setURL_img(miUri);
         }
     }
 
@@ -135,12 +139,13 @@ public class EditarTareaActivity extends AppCompatActivity implements
     public void onBotonGuardarClicked() {
         //Leemos los valores del formulario del fragmento 2
         descripcion = tareaViewModel.getDescripcion().getValue();
+
         URL_doc = tareaViewModel.getURL_doc().getValue();
         URL_aud = tareaViewModel.getURL_aud().getValue();
         URL_img = tareaViewModel.getURL_img().getValue();
         URL_vid = tareaViewModel.getURL_vid().getValue();
         //Creamos un nuevo objeto tarea con los campos editados
-        Tarea tareaEditada = new Tarea(titulo, fechaCreacion,fechaObjetivo, progreso, prioritaria, descripcion,URL_doc,URL_aud,URL_img,URL_vid);
+        Tarea tareaEditada = new Tarea(titulo, fechaCreacion,fechaObjetivo, progreso, prioritaria, descripcion,URL_doc.toString(),URL_aud.toString(),URL_img.toString(),URL_vid.toString());
 
         //Creamos un intent de vuelta para la actividad Listado
         Intent aListado = new Intent();
@@ -285,10 +290,8 @@ public class EditarTareaActivity extends AppCompatActivity implements
         descripcion = tareaViewModel.getDescripcion().getValue();
         URL_aud = tareaViewModel.getURL_aud().getValue();
         URL_vid = tareaViewModel.getURL_vid().getValue();
-        String url = tareaViewModel.getURL_img().getValue();
-        URL_img = url;
-        String urlI = tareaViewModel.getURL_doc().getValue();
-        URL_doc = urlI;
+        URL_img = tareaViewModel.getURL_img().getValue();
+        URL_doc = tareaViewModel.getURL_doc().getValue();
 
         //Cambiamos el fragmento2 por el 1
         cambiarFragmento(fragmento1);
